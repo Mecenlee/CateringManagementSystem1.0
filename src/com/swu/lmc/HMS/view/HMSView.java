@@ -190,7 +190,7 @@ public class HMSView {
 
     }
 
-    @Test
+
     //显示主菜单
     public void mainMenu() {
         while (loop) {
