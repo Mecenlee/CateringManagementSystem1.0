@@ -1,7 +1,5 @@
 package com.swu.lmc.HMS.domain;
 
-import com.swu.lmc.HMS.dao.BasicDAO;
-
 import java.util.Date;
 
 /**

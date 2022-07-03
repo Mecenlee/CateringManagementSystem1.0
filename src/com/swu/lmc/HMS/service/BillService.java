@@ -50,7 +50,8 @@ public class BillService {
 
     //返回所有账单并带有菜品，提供给 View 使用
     public List<MultiTableBean> list2() {
-        return multiTableDAO.queryMulti("select bill.*,`name` from bill,menu where bill.menuId = menu.id", MultiTableBean.class);
+        return multiTableDAO.queryMulti("select bill.*,`name` from bill,menu " +
+                "where bill.menuId = menu.id", MultiTableBean.class);
     }
 
     //看某个餐桌是否有未结算的账单

@@ -1,11 +1,14 @@
 package com.swu.lmc.HMS.view;
 
-import com.swu.lmc.HMS.domain.*;
 import com.swu.lmc.HMS.service.BillService;
 import com.swu.lmc.HMS.service.DiningTableService;
 import com.swu.lmc.HMS.service.EmployeeService;
 import com.swu.lmc.HMS.service.MenuService;
 import com.swu.lmc.HMS.utils.Utility;
+import com.swu.lmc.HMS.domain.DiningTable;
+import com.swu.lmc.HMS.domain.Employee;
+import com.swu.lmc.HMS.domain.Menu;
+import com.swu.lmc.HMS.domain.MultiTableBean;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -46,6 +49,7 @@ public class HMSView {
         System.out.println("===============预定餐桌===============");
         System.out.print("请选择要预定的餐桌编号（-1退出）：");
         int orderId = Utility.readInt();
+        //判断是否为 -1 退出
         if (orderId == -1) {
             System.out.println("===============取消预定===============");
             return;
@@ -190,7 +194,7 @@ public class HMSView {
 
     }
 
-
+    @Test
     //显示主菜单
     public void mainMenu() {
         while (loop) {
@@ -207,7 +211,7 @@ public class HMSView {
                     String pwd = Utility.readString(50);
                     Employee employee = employeeService.getEmployeeByIdAndPwd(empId, pwd);
 
-                    //到数据库中取判断【一会写】
+
                     if (employee != null) {//如果这个对象不等于null 说明这个用户是存在的
                         System.out.println("===============登录成功[" + employee.getName() + "]===============\n");
                         //显示二级菜单，二级菜单时循环操作，所以用 while
